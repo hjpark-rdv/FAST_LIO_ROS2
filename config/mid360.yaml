@@ -8,10 +8,13 @@
         cube_side_length: 1000.0
         runtime_pos_log_enable: false
         map_file_path: "./test.pcd"
-
+        odom_frame_id: "odom"
+        child_frame_id: "base_link"
         common:
-            lid_topic:  "/livox/lidar_192_168_70_4"
-            imu_topic:  "/livox/imu_192_168_70_4"        
+            lid_topic:  "/velodyne_points"
+            imu_topic:  "/imu/data"
+            # lid_topic:  "/livox/lidar_192_168_70_4"
+            # imu_topic:  "/livox/imu_192_168_70_4"        
             # lid_topic:  "/mid360_PointCloud2"
             # imu_topic:  "/imu/data"
             # lid_topic:  "/livox/points"
