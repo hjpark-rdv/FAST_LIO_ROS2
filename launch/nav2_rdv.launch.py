@@ -46,6 +46,10 @@ def generate_launch_description():
     # 방금 만든 nav2_params.yaml 파일의 경로를 지정합니다.
     nav2_params_path = os.path.join(
         get_package_share_directory('fast_lio'), 'config', 'nav2_params_mppi.yaml')
+        # get_package_share_directory('fast_lio'), 'config', 'nav2_sample_mppi.yaml')
+        # get_package_share_directory('fast_lio'), 'config', 'nav2_params.yaml')
+
+
         
     nav2_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(
