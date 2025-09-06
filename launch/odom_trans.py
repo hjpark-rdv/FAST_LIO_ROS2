@@ -7,13 +7,16 @@ from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 import tf_transformations
 from math import sin, cos
+import numpy as np
+if not hasattr(np, 'float'):
+        np.float = float
 
 class OdomTransformer(Node):
     def __init__(self):
         super().__init__('odom_transformer')
 
         # 파라미터 선언 (imu_link와 base_link 입력받음, 기본값 설정)
-        self.declare_parameter('imu_link', 'imu_link')  # imu_link 이름 (예: body 또는 camera_init)
+        self.declare_parameter('imu_link', 'livox_frame')  # imu_link 이름 (예: body 또는 camera_init)
         self.declare_parameter('base_link', 'base_link')  # base_link 이름
         self.imu_link = self.get_parameter('imu_link').value
         self.base_link = self.get_parameter('base_link').value
